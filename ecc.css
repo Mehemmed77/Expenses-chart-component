@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root{
+    --primary-soft-red:hsl(10, 79%, 65%);
+    --primary-cyan:hsl(186, 34%, 60%);
+
+    --primary-soft-red-hover:hsl(10,79%,74%);
+    --primary-cyan-hover:hsl(186, 34%, 72%);
+
+
+
+    --neutral-dark-brown:hsl(25, 47%, 15%);
+    --neutral-medium-brown:hsl(28, 10%, 53%);
+    --neutral-cream:hsl(27, 66%, 92%);
+    --neutral-very-pale-orange:hsl(33, 100%, 98%);
+
+    --regular-font-size:400;
+    --bold-font-size:700;
+
+    --main-font-family:'DM Sans';
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+img{
+    max-width: 100%;
+}
+
+html,body{
+    height:100%;
+    background-color: var(--neutral-cream);
+    font-family:var(--main-font-family);
+}
+
+.row{
+    display: flex;
+}
+
+.main{
+    height:100%;
+    align-items: center;
+}
+.container{
+    margin:0 auto;
+    width: 90%;
+    max-width: 540px;
+}
+
+.balance-container{
+    justify-content: space-between;
+    align-items: center;
+    padding:25px;
+    border-radius:15px;
+    background-color: var(--primary-soft-red);
+    color:white;
+    margin-bottom:20px;
+}
+
+.regular-text{
+    margin-bottom:5px;   
+}
+.container > div + div{
+    margin-top:10px;
+}
+
+.info{
+    border-radius:15px;
+    background-color: var(--neutral-very-pale-orange);
+    padding:28px 0px;
+}
+.info__container{
+    /* border:5px solid plum; */
+    width:90%;
+    margin:0 auto; 
+}
+
+.bars-container{
+    gap:13px;
+    align-items: flex-end;
+    margin-block:52px 20px;
+    /* border:4px solid red; */
+}
+
+.bars{
+    /* border:3px solid olivedrab; */
+    width:100%;
+    text-align: center;
+    position: relative;
+}
+
+.percentage-bars{
+    width:100%;
+    margin:0 auto 0 auto;
+    border-radius: 6px;
+    margin-bottom:2px;
+    cursor: pointer;
+    transition: .5s background-color;
+}
+
+.other-day{
+    background-color: var(--primary-soft-red);
+}
+.today{
+    background-color: var(--primary-cyan);
+}
+
+.other-day:hover{
+    background-color: var(--primary-soft-red-hover);
+}
+
+.today:hover{
+    background-color: var(--primary-cyan-hover);
+}
+
+.spending-text{
+    font-size:30px;
+}
+
+.very-light-text{
+    color:var(--neutral-medium-brown);
+}
+
+hr{
+    opacity: .2;
+}
+
+.price-container{
+    margin-top:20px;
+    justify-content: space-between;
+    align-items: last baseline;
+}
+
+.price{
+    font-size: 40px;
+}
+
+.percentage-container{
+    text-align: right;
+}
+
+.show-price{
+    padding:6px;
+    background-color: var(--neutral-dark-brown);
+    color:var(--neutral-very-pale-orange);
+    font-weight: var(--bold-font-size);
+    border-radius: 7px;
+    position: absolute;
+    display: none;
+}
