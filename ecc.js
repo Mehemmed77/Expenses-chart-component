@@ -40,7 +40,7 @@ const week_days = [
 const bars_container = document.getElementsByClassName('bars-container')[0]
 
 for(day of week_days){
-    ideal_height = (day.amount/16+0.5)*2.1
+    ideal_height = (day.amount+0.5)*2.4
 
     if(day.day=='wed'){
         class_name = 'today'
@@ -56,28 +56,21 @@ for(day of week_days){
             $${day.amount}
         </div>
         <div class="percentage-bars ${day.day} ${class_name}" 
-        style="height:${ideal_height}rem;"
+        style="height:${ideal_height}px;"
         onmouseover="showPrice('${day.day}')" onmouseleave="hidePrice('${day.day}')" ></div>
 
         <p class="very-light-text">${day.day}</p>
     </div>
     `)
-    day['ideal_height'] = ideal_height*16
 }
 
 
 percentage_bars = document.getElementsByClassName('percentage-bars')
 
 const showPrice = (param) => {
-    for(i of week_days){
-        if(i.day==param){
-            price_height = i.ideal_height+28
-        }
-    }
-
-    document.getElementById(`${param}-price`).style = `bottom:${price_height}px;display:block;`
+    document.getElementById(`${param}-price`).style = 'opacity:1;'
 }
 
 const hidePrice = (param) => {
-    document.getElementById(`${param}-price`).style = 'display:none;'
+    document.getElementById(`${param}-price`).style = 'opacity:0;'
 }
